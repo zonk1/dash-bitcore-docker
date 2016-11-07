@@ -3,7 +3,7 @@ Scripts for dockerized da bitcore
 
 This repo is for running dacash bitcore (with insight).
 
-Note that the dacashd 0.12.1 binary with bitcore patches is pre-built here for convenience.
+Note that the dashd 0.12.1 binary with bitcore patches is pre-built here for convenience.
 
 Requirements
 ----
@@ -15,13 +15,13 @@ Getting the binary
 ------------------
 You need to get the binary only once.
 
-Three ways of getting the zcashd binary.
+Three ways of getting the dashd binary.
 
 * install [git lfs](https://git-lfs.github.com/) before cloning this repo, it will be in `dashd` auto-magically
 
 OR 
 
-* `rm zcashd && wget https://github.com/runn1ng/dash-bitcore-docker/raw/master/dashd` 
+* `rm dashd && wget https://github.com/runn1ng/dash-bitcore-docker/raw/master/dashd` 
 
 OR
 
