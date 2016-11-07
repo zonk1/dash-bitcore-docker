@@ -1,7 +1,7 @@
-Scripts for dockerized da bitcore
+Scripts for dockerized dash bitcore
 ====================================
 
-This repo is for running dacash bitcore (with insight).
+This repo is for running dash bitcore (with insight).
 
 Note that the dashd 0.12.1 binary with bitcore patches is pre-built here for convenience.
 
