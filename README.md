@@ -29,7 +29,7 @@ OR
 
 Install bitcore
 -------
-`./install.sh` for installing str4d version of bitcore libraries.
+`./install.sh` for installing.
 
 Clean up
 --------
