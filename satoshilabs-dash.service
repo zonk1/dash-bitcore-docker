@@ -1,0 +1,15 @@
+[Unit]
+Desription=Satoshilabs DASH in Docker
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+RestartSec=15s
+ExecStartPre=-/usr/bin/docker rm satoshilabs-dash
+ExecStart=/usr/bin/docker run --name satoshilabs-dash -v /opt/satoshilabs/dash-bitcore-runtime:/root/.bitcore -p 3003:3001 satoshilabs-dash
+ExecStop=/bin/sh -c '/usr/bin/docker kill --signal=SIGINT satoshilabs-dash; /usr/bin/docker stop --time=90 satoshilabs-dash'
+ExecStopPost=/usr/bin/docker rm satoshilabs-dash
+
+[Install]
+WantedBy=multi-user.target
