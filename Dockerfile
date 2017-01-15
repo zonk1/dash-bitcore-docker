@@ -1,9 +1,9 @@
 FROM phusion/baseimage:0.9.19
 
 RUN apt-get update
-RUN apt-get install -y nodejs nodejs-legacy npm git
-RUN apt-get install -y libzmq3-dev
-RUN apt-get install -y  libboost-system1.58.0 \
+RUN apt-get install -qy nodejs nodejs-legacy npm git
+RUN apt-get install -qy libzmq3-dev
+RUN apt-get install -qy  libboost-system1.58.0 \
                         libboost-filesystem1.58.0\
                         libboost-program-options1.58.0 \
                         libboost-chrono1.58.0 \
@@ -18,10 +18,11 @@ RUN apt-get update \
         libevent-dev \
         libdb4.8++-dev
 
+WORKDIR /
+RUN npm install -g bitcore-dash
 RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
 ADD dashd /dashd
-ADD config.json /config.json
-ADD _run_inside.sh /run_inside.sh
 
-#RUN npm install -g bitcore-node-dash
+# Run command with exec, not with shell
+ENTRYPOINT ["/usr/local/bin/bitcored"]
 
