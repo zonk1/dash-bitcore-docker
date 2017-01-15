@@ -31,22 +31,23 @@ Install bitcore
 -------
 `./install.sh` for installing.
 
-Clean up
---------
-`sudo rm -rf nodedir` for cleaning up node modules (blockchain will stay). You will need to install again.
-
-`sudo rm -rf datadir` for deleting blockchain.
-
-Don't do when running.
-
 Running
 -------
-`./run.sh`
+`systemctl start satoshilabs-dash.service`
 
-Insight will be visible at `http://localhost`.
+Insight will be visible at `http://localhost:3003`.
 
 Don't run more than one insight.
 
 Stopping
 --------
-`docker stop dash && docker rm dash`
+`systemctl stop satoshilabs-dash.service`
+
+Logs
+----
+
+Logs goes to systemd journal. Manipulate using `journalctl`
+
+See live logs with:
+
+`journalctl -f -u satoshilabs-dash.service`
